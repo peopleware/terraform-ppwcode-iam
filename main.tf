@@ -88,3 +88,22 @@ data "aws_iam_policy_document" "AllowIndividualUserToManageTheirOwnMFA" {
     ]
   }
 }
+
+resource "aws_iam_policy" "AllowGetAccountDetails" {
+  name   = "AllowGetAccountDetails"
+  path   = "/"
+  policy = "${data.aws_iam_policy_document.AllowGetAccountDetails.json}"
+}
+
+data "aws_iam_policy_document" "AllowGetAccountDetails" {
+  statement {
+    actions = [
+      "iam:GetAccountSummary",
+      "iam:ListAccountAliases",
+    ]
+
+    resources = [
+      "*",
+    ]
+  }
+}
