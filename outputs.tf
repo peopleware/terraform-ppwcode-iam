@@ -17,3 +17,7 @@ output "iam_policy_AllowIndividualUserToManageTheirOwnMFA_arn" {
 output "iam_policy_AllowGetAccountDetails_arn" {
   value = "${aws_iam_policy.AllowGetAccountDetails.arn}"
 }
+
+output "iam_policy_AllowIndividualUserToChangeTheirOwnPassword_arn" {
+  value = "${aws_iam_policy.AllowIndividualUserToChangeTheirOwnPassword.arn}"
+}

@@ -107,3 +107,21 @@ data "aws_iam_policy_document" "AllowGetAccountDetails" {
     ]
   }
 }
+
+resource "aws_iam_policy" "AllowIndividualUserToChangeTheirOwnPassword" {
+  name   = "AllowIndividualUserToChangeTheirOwnPassword"
+  path   = "/"
+  policy = "${data.aws_iam_policy_document.AllowIndividualUserToChangeTheirOwnPassword.json}"
+}
+
+data "aws_iam_policy_document" "AllowIndividualUserToChangeTheirOwnPassword" {
+  statement {
+    actions = [
+      "iam:ChangePassword",
+    ]
+
+    resources = [
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/$${aws:username}",
+    ]
+  }
+}
