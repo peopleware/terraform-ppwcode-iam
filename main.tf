@@ -1,7 +1,7 @@
 resource "aws_iam_policy" "AllowListAllAccounts" {
   name   = "AllowListAllAccounts"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowListAllAccounts.json}"
+  policy = data.aws_iam_policy_document.AllowListAllAccounts.json
 }
 
 data "aws_iam_policy_document" "AllowListAllAccounts" {
@@ -20,7 +20,7 @@ data "aws_iam_policy_document" "AllowListAllAccounts" {
 resource "aws_iam_policy" "AllowIndividualUserToSeeAndManageTheirOwnAccountInformation" {
   name   = "AllowIndividualUserToSeeAndManageTheirOwnAccountInformation"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowIndividualUserToSeeAndManageTheirOwnAccountInformation.json}"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToSeeAndManageTheirOwnAccountInformation.json
 }
 
 data "aws_iam_policy_document" "AllowIndividualUserToSeeAndManageTheirOwnAccountInformation" {
@@ -47,7 +47,7 @@ data "aws_iam_policy_document" "AllowIndividualUserToSeeAndManageTheirOwnAccount
 resource "aws_iam_policy" "AllowIndividualUserToListTheirOwnMFA" {
   name   = "AllowIndividualUserToListTheirOwnMFA"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowIndividualUserToListTheirOwnMFA.json}"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToListTheirOwnMFA.json
 }
 
 data "aws_iam_policy_document" "AllowIndividualUserToListTheirOwnMFA" {
@@ -67,7 +67,7 @@ data "aws_iam_policy_document" "AllowIndividualUserToListTheirOwnMFA" {
 resource "aws_iam_policy" "AllowIndividualUserToManageTheirOwnMFA" {
   name   = "AllowIndividualUserToManageTheirOwnMFA"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowIndividualUserToManageTheirOwnMFA.json}"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToManageTheirOwnMFA.json
 }
 
 data "aws_iam_policy_document" "AllowIndividualUserToManageTheirOwnMFA" {
@@ -92,7 +92,7 @@ data "aws_iam_policy_document" "AllowIndividualUserToManageTheirOwnMFA" {
 resource "aws_iam_policy" "AllowGetAccountDetails" {
   name   = "AllowGetAccountDetails"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowGetAccountDetails.json}"
+  policy = data.aws_iam_policy_document.AllowGetAccountDetails.json
 }
 
 data "aws_iam_policy_document" "AllowGetAccountDetails" {
@@ -111,7 +111,7 @@ data "aws_iam_policy_document" "AllowGetAccountDetails" {
 resource "aws_iam_policy" "AllowIndividualUserToChangeTheirOwnPassword" {
   name   = "AllowIndividualUserToChangeTheirOwnPassword"
   path   = "/"
-  policy = "${data.aws_iam_policy_document.AllowIndividualUserToChangeTheirOwnPassword.json}"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToChangeTheirOwnPassword.json
 }
 
 data "aws_iam_policy_document" "AllowIndividualUserToChangeTheirOwnPassword" {
