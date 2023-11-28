@@ -14,6 +14,10 @@ output "iam_policy_AllowIndividualUserToManageTheirOwnMFA_arn" {
   value = aws_iam_policy.AllowIndividualUserToManageTheirOwnMFA.arn
 }
 
+output "iam_policy_AllowIndividualUserToListTheirOwnCodeCommit_arn" {
+  value = aws_iam_policy.AllowIndividualUserToListTheirOwnCodeCommit.arn
+}
+
 output "iam_policy_AllowGetAccountDetails_arn" {
   value = aws_iam_policy.AllowGetAccountDetails.arn
 }

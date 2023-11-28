@@ -92,6 +92,24 @@ data "aws_iam_policy_document" "AllowIndividualUserToManageTheirOwnMFA" {
   }
 }
 
+resource "aws_iam_policy" "AllowIndividualUserToListTheirOwnCodeCommit" {
+  name   = "AllowIndividualUserToListTheirOwnCodeCommit"
+  path   = "/"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToListTheirOwnCodeCommit.json
+}
+
+data "aws_iam_policy_document" "AllowIndividualUserToListTheirOwnCodeCommit" {
+  statement {
+    actions = [
+      "iam:ListSSHPublicKeys",
+    ]
+
+    resources = [
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/$${aws:username}",
+    ]
+  }
+}
+
 resource "aws_iam_policy" "AllowGetAccountDetails" {
   name   = "AllowGetAccountDetails"
   path   = "/"
