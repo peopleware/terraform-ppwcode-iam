@@ -26,6 +26,7 @@ resource "aws_iam_policy" "AllowIndividualUserToSeeAndManageTheirOwnAccountInfor
 data "aws_iam_policy_document" "AllowIndividualUserToSeeAndManageTheirOwnAccountInformation" {
   statement {
     actions = [
+      "iam:GetUser",
       "iam:CreateAccessKey",
       "iam:CreateLoginProfile",
       "iam:DeleteAccessKey",
