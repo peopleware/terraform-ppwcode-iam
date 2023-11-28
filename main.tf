@@ -110,6 +110,24 @@ data "aws_iam_policy_document" "AllowIndividualUserToListTheirOwnCodeCommit" {
   }
 }
 
+resource "aws_iam_policy" "AllowIndividualUserToManageTheirOwnCodeCommit" {
+  name   = "AllowIndividualUserToManageTheirOwnCodeCommit"
+  path   = "/"
+  policy = data.aws_iam_policy_document.AllowIndividualUserToManageTheirOwnCodeCommit.json
+}
+
+data "aws_iam_policy_document" "AllowIndividualUserToManageTheirOwnCodeCommit" {
+  statement {
+    actions = [
+      "iam:UploadSSHPublicKey",
+    ]
+
+    resources = [
+      "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/$${aws:username}",
+    ]
+  }
+}
+
 resource "aws_iam_policy" "AllowGetAccountDetails" {
   name   = "AllowGetAccountDetails"
   path   = "/"
