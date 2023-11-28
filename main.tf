@@ -27,6 +27,7 @@ data "aws_iam_policy_document" "AllowIndividualUserToSeeAndManageTheirOwnAccount
   statement {
     actions = [
       "iam:GetUser",
+      "iam:ListGroupsForUser",
       "iam:CreateAccessKey",
       "iam:CreateLoginProfile",
       "iam:DeleteAccessKey",
