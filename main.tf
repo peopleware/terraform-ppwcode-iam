@@ -35,6 +35,7 @@ data "aws_iam_policy_document" "AllowIndividualUserToSeeAndManageTheirOwnAccount
       "iam:GetLoginProfile",
       "iam:ListAccessKeys",
       "iam:UpdateAccessKey",
+      "iam:GetAccessKeyLastUsed",
       "iam:UpdateLoginProfile",
     ]
 
